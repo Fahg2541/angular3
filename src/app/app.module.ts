@@ -1,11 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { Component, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgMultiSelectDropDownModule  } from 'ng-multiselect-dropdown';
+import { NgxDatePickerModule } from '@ngx-tiny/date-picker';
 
 import {A11yModule} from '@angular/cdk/a11y';
 import {ClipboardModule} from '@angular/cdk/clipboard';
@@ -159,6 +162,9 @@ const appRoutes: Routes = [
     ScrollingModule,
     RouterModule.forRoot(appRoutes),
     NgbModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    FormsModule,
+    NgxDatePickerModule
   ],
   schemas: [NO_ERRORS_SCHEMA],
   entryComponents: [AddOrderComponent],
@@ -167,6 +173,7 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     ToggleComponent,
-    SidebarComponent]
+    SidebarComponent,
+    AddOrderComponent]
 })
 export class AppModule { }
